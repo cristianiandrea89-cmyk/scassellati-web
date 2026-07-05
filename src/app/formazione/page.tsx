@@ -74,7 +74,7 @@ export default function FormazionePage() {
       <PageHero
         eyebrow="Formazione"
         title="La nostra formazione nasce dall'esperienza in produzione."
-        subtitle="Progettiamo percorsi formativi su controlli numerici (CNC), utensileria, CAD/CAM, metrologia e tecnologie di produzione, costruiti sulle reali esigenze delle aziende del Lazio e dell'Umbria e orientati all'applicazione pratica."
+        subtitle="Progettiamo percorsi formativi su controlli numerici (CNC), utensileria, CAD/CAM, metrologia e tecnologie di produzione, costruiti sulle reali esigenze delle aziende del Lazio, dell'Umbria e di tutta Italia e orientati all'applicazione pratica."
         backHref="/servizi"
         backLabel="Torna a Servizi"
         image="/images/formazione/hero-formazione.jpeg"
