@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
+import type { Metadata } from "next";
 import {
   Code2,
   Settings2,
@@ -9,6 +10,12 @@ import {
   BarChart3,
   HardHat,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Consulenza tecnica",
+  description:
+    "Analizziamo il processo produttivo, sviluppiamo strategie di lavorazione e affianchiamo il reparto tecnico per aumentare produttività, qualità ed efficienza.",
+};
 
 const attivita = [
   {

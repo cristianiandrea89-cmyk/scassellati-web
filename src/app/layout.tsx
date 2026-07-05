@@ -21,10 +21,41 @@ const archivoHeading = localFont({
   ],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scassellati-web.vercel.app";
+
 export const metadata: Metadata = {
-  title: "F. Scassellati Srl — Dal 1962 affianchiamo l'industria meccanica",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "F. Scassellati Srl — Dal 1962 affianchiamo l'industria meccanica",
+    template: "%s | Scassellati",
+  },
   description:
     "Macchine utensili, utensili, software, automazione e trattamenti superficiali. Partner tecnico dell'industria manifatturiera italiana dal 1962.",
+  openGraph: {
+    type: "website",
+    locale: "it_IT",
+    siteName: "Scassellati",
+    title: "F. Scassellati Srl — Dal 1962 affianchiamo l'industria meccanica",
+    description:
+      "Macchine utensili, utensili, software, automazione e trattamenti superficiali. Partner tecnico dell'industria manifatturiera italiana dal 1962.",
+    images: ["/images/home/hero-header.jpeg"],
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "F. Scassellati S.r.l.",
+  url: siteUrl,
+  telephone: "+39-06-93020906",
+  email: "segreteria@scassellati.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Via del Casale Ferranti, 85",
+    addressLocality: "Roma",
+    postalCode: "00173",
+    addressCountry: "IT",
+  },
 };
 
 export default function RootLayout({
@@ -38,6 +69,10 @@ export default function RootLayout({
       className={`${archivo.variable} ${archivoHeading.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-dgray">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

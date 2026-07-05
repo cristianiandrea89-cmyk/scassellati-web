@@ -2,6 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import { areas } from "@/data/soluzioni";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Soluzioni per l'industria meccanica",
+  description:
+    "Macchine per asportazione truciolo, lamiera, utensili, metrologia, software, automazione e finitura: soluzioni tecnologiche integrate per la produzione industriale.",
+};
 
 export default function SoluzioniPage() {
   return (

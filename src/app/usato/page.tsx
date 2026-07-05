@@ -1,4 +1,11 @@
 import PageHero from "@/components/PageHero";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Usato garantito",
+  description:
+    "Macchine usate revisionate e testate, valutazione e ritiro del tuo parco macchine usato con supporto tecnico Scassellati.",
+};
 
 export default function UsatoPage() {
   return (

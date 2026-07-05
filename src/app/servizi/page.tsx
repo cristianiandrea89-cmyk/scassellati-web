@@ -1,6 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Servizi",
+  description:
+    "Consulenza tecnica, formazione e assistenza: non ci limitiamo a vendere macchine, supportiamo ogni fase del tuo processo produttivo.",
+};
 
 const services = [
   {

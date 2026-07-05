@@ -3,9 +3,21 @@ import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import SolutionCta from "@/components/SolutionCta";
 import { soluzioniPages as pages } from "@/data/soluzioni";
+import type { Metadata } from "next";
 
 export function generateStaticParams() {
   return Object.keys(pages).map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const data = pages[slug];
+  if (!data) return {};
+  return { title: data.title, description: data.subtitle };
 }
 
 export default async function SoluzioneDetailPage({

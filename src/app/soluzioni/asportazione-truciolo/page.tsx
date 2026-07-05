@@ -1,6 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Macchine per asportazione truciolo",
+  description:
+    "Centri di lavoro verticali, orizzontali e a 5 assi, torni CNC, fantina mobile, plurimandrino, rettifiche e macchine da taglio.",
+};
 
 const categories = [
   {

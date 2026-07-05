@@ -1,5 +1,12 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Lavora con noi",
+  description:
+    "Siamo sempre alla ricerca di tecnici, ingegneri e formatori appassionati di meccanica industriale. Scopri le opportunità in Scassellati.",
+};
 
 export default function LavoraConNoiPage() {
   return (

@@ -1,6 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Formazione",
+  description:
+    "Formazione tecnica pratica su macchine utensili, programmazione CNC, CAD/CAM e metrologia. Percorsi con Hexagon Machine Trainer e collaborazione ELIS.",
+};
 
 const beneficiHexagon = [
   {

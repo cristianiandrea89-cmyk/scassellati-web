@@ -1,4 +1,11 @@
 import PageHero from "@/components/PageHero";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contatti",
+  description:
+    "Contatta F. Scassellati S.r.l. per informazioni tecniche, appuntamenti o richieste commerciali. Sede a Roma, via del Casale Ferranti 85.",
+};
 
 export default function ContattiPage() {
   return (
