@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-dgray text-gray">
-      <div className="mx-auto max-w-7xl px-6 pt-16 pb-12 md:pt-20 md:pb-16 grid gap-10 md:gap-16 md:grid-cols-[1.2fr_1fr_1fr]">
+      <div className="mx-auto max-w-7xl px-6 pt-16 pb-12 md:pt-20 md:pb-16 grid gap-10 md:gap-16 md:grid-cols-[1.2fr_1fr_1fr] text-left">
         <div>
           <Image
             src="/logo/scassellati-lockup-white.svg"

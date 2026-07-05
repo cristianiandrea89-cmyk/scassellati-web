@@ -76,8 +76,16 @@ export default function UsatoPage() {
             </h2>
             <p className="text-dgray/70 mb-8">
               Gli annunci saranno collegati automaticamente al nostro
-              portale dedicato all&apos;usato, ventunoservice.it — questa
-              sezione mostrerà a breve le macchine disponibili.
+              portale dedicato all&apos;usato,{" "}
+              <a
+                href="https://ventunoservice.it/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-dgray hover:text-bronze hover:underline transition-colors"
+              >
+                ventunoservice.it
+              </a>{" "}
+              — questa sezione mostrerà a breve le macchine disponibili.
             </p>
             <div className="bg-offwhite border border-dashed border-gray/60 rounded-lg p-10 text-center text-dgray/50 text-sm">
               Elenco macchine usate in arrivo
