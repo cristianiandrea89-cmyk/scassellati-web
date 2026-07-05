@@ -26,7 +26,7 @@ export default function PageHero({
       )}
       <div
         className={`relative mx-auto max-w-7xl px-6 ${
-          image ? "py-20" : "py-[2.8125rem]"
+          image ? "py-20" : "py-[2.109375rem]"
         }`}
       >
         {eyebrow && (
