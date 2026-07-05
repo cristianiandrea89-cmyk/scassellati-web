@@ -30,7 +30,7 @@ export default function UsatoPage() {
       <PageHero
         eyebrow="Usato"
         title="Usato garantito e valutazione"
-        subtitle="Se stai rinnovando il tuo parco macchine, possiamo aiutarti a valutare, ritirare o permutare la tua attrezzatura usata. Offriamo inoltre una selezione di macchine utensili usate garantite, testate dai nostri tecnici, per aziende del Lazio, dell'Umbria e di tutta Italia."
+        subtitle="Se stai rinnovando il tuo parco macchine, possiamo aiutarti a valutare, ritirare o permutare la tua attrezzatura usata. Offriamo inoltre una selezione di macchine utensili usate garantite, testate dai nostri tecnici, per aziende del Lazio, Umbria e di tutta Italia."
         backHref="/"
         backLabel="Torna alla Home"
       />
