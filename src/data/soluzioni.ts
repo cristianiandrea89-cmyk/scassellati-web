@@ -99,7 +99,7 @@ export const soluzioniPages: Record<string, SolutionCategory> = {
       {
         name: "Schunk",
         description: "Sistemi di serraggio e presa per macchine utensili.",
-        image: "/images/soluzioni/utensili-schunk.png",
+        image: "/images/soluzioni/utensili-schunk.jpg",
         brands: [{ name: "Schunk", url: "https://schunk.com/it/it" }],
       },
     ],
