@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Macchine utensili usate",
   description:
-    "Macchine utensili usate revisionate e testate, valutazione, ritiro e permuta del tuo parco macchine con supporto tecnico Scassellati. Servizio per aziende del Lazio, dell'Umbria e in tutta Italia.",
+    "Macchine utensili usate revisionate e testate, valutazione, ritiro e permuta del tuo parco macchine con supporto tecnico Scassellati. Servizio per aziende del Lazio, Umbria e in tutta Italia.",
 };
 
 const usatoJsonLd = {

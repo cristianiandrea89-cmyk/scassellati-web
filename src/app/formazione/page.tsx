@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Formazione controlli numerici e utensili",
   description:
-    "Corsi di formazione su controlli numerici (CNC), programmazione CAM, utensileria Sandvik Coromant e Schunk e metrologia, con simulatore Hexagon Machine Trainer. Percorsi per aziende del Lazio e dell'Umbria.",
+    "Corsi di formazione su controlli numerici (CNC), programmazione CAM, utensileria Sandvik Coromant e Schunk e metrologia, con simulatore Hexagon Machine Trainer. Percorsi per aziende del Lazio e Umbria.",
 };
 
 const trainingJsonLd = {

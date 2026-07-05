@@ -86,9 +86,9 @@ export const soluzioniPages: Record<string, SolutionCategory> = {
   utensili: {
     title: "Utensili",
     subtitle:
-      "Seleziona la soluzione di utensileria più adatta alle tue lavorazioni. Distributori Sandvik Coromant e Schunk per le aziende del Lazio e dell'Umbria.",
+      "Seleziona la soluzione di utensileria più adatta alle tue lavorazioni. Distributori Sandvik Coromant e Schunk per le aziende del Lazio e Umbria.",
     metaDescription:
-      "Utensili, inserti e sistemi di serraggio Sandvik Coromant e Schunk. Vendita, supporto tecnico e ottimizzazione dei cicli di lavorazione per le aziende del Lazio e dell'Umbria.",
+      "Utensili, inserti e sistemi di serraggio Sandvik Coromant e Schunk. Vendita, supporto tecnico e ottimizzazione dei cicli di lavorazione per le aziende del Lazio e Umbria.",
     items: [
       {
         name: "Sandvik Coromant",
