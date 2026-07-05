@@ -70,7 +70,7 @@ export default async function AsportazioneDetailPage({
                           rel="noopener noreferrer"
                           className="text-dgray/70 hover:text-bronze hover:underline"
                         >
-                          {brand.name} ↗
+                          {brand.name} ↗︎
                         </a>
                         {i < item.brands!.length - 1 && ", "}
                       </span>

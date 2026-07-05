@@ -74,7 +74,7 @@ export default function ServiziPage() {
                   href={service.href}
                   className="mt-6 text-bronze text-sm font-medium hover:underline"
                 >
-                  {service.cta} →
+                  {service.cta} →︎
                 </Link>
               </div>
             </div>

@@ -59,7 +59,7 @@ export default function Navbar() {
                   href="/soluzioni"
                   className="mt-1 block rounded-sm px-3 py-2 text-sm font-medium text-bronze hover:bg-white/5"
                 >
-                  Vedi tutte le soluzioni →
+                  Vedi tutte le soluzioni →︎
                 </Link>
               </div>
             </div>

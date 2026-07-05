@@ -167,7 +167,7 @@ export default function FormazionePage() {
               rel="noopener noreferrer"
               className="text-sm text-dgray hover:text-bronze hover:underline transition-colors"
             >
-              Scopri ELIS ↗
+              Scopri ELIS ↗︎
             </a>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">

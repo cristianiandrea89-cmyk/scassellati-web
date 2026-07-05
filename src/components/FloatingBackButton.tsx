@@ -26,7 +26,7 @@ export default function FloatingBackButton({
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
-      <span aria-hidden="true">←</span>
+      <span aria-hidden="true">←︎</span>
       {label}
     </Link>
   );

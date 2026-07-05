@@ -56,7 +56,7 @@ export default function SolutionsGrid() {
               </h3>
               <p className="text-sm text-gray/70">{s.subtitle}</p>
               <span className="mt-4 inline-block text-bronze text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                Scopri di più →
+                Scopri di più →︎
               </span>
             </Link>
           ))}

@@ -131,7 +131,7 @@ export default function AziendeClient() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-sm text-dgray hover:text-bronze hover:underline transition-colors"
                   >
-                    Visita il sito ufficiale →
+                    Visita il sito ufficiale →︎
                   </a>
                 </div>
               </div>

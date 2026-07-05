@@ -131,7 +131,7 @@ export default function ConsulenzaTecnicaPage() {
             href="/formazione"
             className="text-sm text-offwhite hover:text-bronze hover:underline transition-colors"
           >
-            Scopri la formazione →
+            Scopri la formazione →︎
           </Link>
         </div>
       </section>
