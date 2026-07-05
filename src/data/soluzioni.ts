@@ -5,7 +5,12 @@ export type Item = {
   image?: string;
   brands?: Brand[];
 };
-export type SolutionCategory = { title: string; subtitle: string; items: Item[] };
+export type SolutionCategory = {
+  title: string;
+  subtitle: string;
+  metaDescription?: string;
+  items: Item[];
+};
 
 // Le 9 macro-categorie mostrate in /soluzioni. "slug" corrisponde alla
 // route: /soluzioni/[slug], eccetto "asportazione-truciolo" che ha le
@@ -81,7 +86,9 @@ export const soluzioniPages: Record<string, SolutionCategory> = {
   utensili: {
     title: "Utensili",
     subtitle:
-      "Seleziona la soluzione di utensileria più adatta alle tue lavorazioni.",
+      "Seleziona la soluzione di utensileria più adatta alle tue lavorazioni. Distributori Sandvik Coromant e Schunk per le aziende del Lazio e dell'Umbria.",
+    metaDescription:
+      "Utensili, inserti e sistemi di serraggio Sandvik Coromant e Schunk. Vendita, supporto tecnico e ottimizzazione dei cicli di lavorazione per le aziende del Lazio e dell'Umbria.",
     items: [
       {
         name: "Sandvik Coromant",

@@ -17,7 +17,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const data = pages[slug];
   if (!data) return {};
-  return { title: data.title, description: data.subtitle };
+  return { title: data.title, description: data.metaDescription ?? data.subtitle };
 }
 
 export default async function SoluzioneDetailPage({
@@ -29,8 +29,24 @@ export default async function SoluzioneDetailPage({
   const data = pages[slug];
   if (!data) notFound();
 
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: data.title,
+    description: data.metaDescription ?? data.subtitle,
+    provider: { "@type": "LocalBusiness", name: "F. Scassellati S.r.l." },
+    areaServed: [
+      { "@type": "State", name: "Lazio" },
+      { "@type": "State", name: "Umbria" },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <PageHero
         eyebrow="Soluzioni"
         title={data.title}

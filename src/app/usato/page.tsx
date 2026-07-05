@@ -2,18 +2,35 @@ import PageHero from "@/components/PageHero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Usato garantito",
+  title: "Macchine utensili usate",
   description:
-    "Macchine usate revisionate e testate, valutazione e ritiro del tuo parco macchine usato con supporto tecnico Scassellati.",
+    "Macchine utensili usate revisionate e testate, valutazione, ritiro e permuta del tuo parco macchine con supporto tecnico Scassellati. Servizio per aziende del Lazio, dell'Umbria e in tutta Italia.",
+};
+
+const usatoJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Valutazione, ritiro e vendita macchine utensili usate",
+  description:
+    "Valutazione, ritiro, permuta e vendita di macchine utensili usate revisionate e testate.",
+  provider: { "@type": "LocalBusiness", name: "F. Scassellati S.r.l." },
+  areaServed: [
+    { "@type": "State", name: "Lazio" },
+    { "@type": "State", name: "Umbria" },
+  ],
 };
 
 export default function UsatoPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(usatoJsonLd) }}
+      />
       <PageHero
         eyebrow="Usato"
         title="Usato garantito e valutazione"
-        subtitle="Se stai rinnovando il tuo parco macchine, possiamo aiutarti a valutare, ritirare o permutare la tua attrezzatura usata. Offriamo inoltre una selezione di macchine usate garantite, testate dai nostri tecnici."
+        subtitle="Se stai rinnovando il tuo parco macchine, possiamo aiutarti a valutare, ritirare o permutare la tua attrezzatura usata. Offriamo inoltre una selezione di macchine utensili usate garantite, testate dai nostri tecnici, per aziende del Lazio, dell'Umbria e di tutta Italia."
         backHref="/"
         backLabel="Torna alla Home"
       />

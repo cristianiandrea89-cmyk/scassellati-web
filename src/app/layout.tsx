@@ -31,6 +31,15 @@ export const metadata: Metadata = {
   },
   description:
     "Macchine utensili, utensili, software, automazione e trattamenti superficiali. Partner tecnico dell'industria manifatturiera italiana dal 1962.",
+  keywords: [
+    "macchine utensili",
+    "formazione controlli numerici",
+    "corsi CNC",
+    "utensili Sandvik Coromant",
+    "utensili Schunk",
+    "macchine utensili usate Lazio",
+    "macchine utensili usate Umbria",
+  ],
   openGraph: {
     type: "website",
     locale: "it_IT",
@@ -56,6 +65,10 @@ const organizationJsonLd = {
     postalCode: "00173",
     addressCountry: "IT",
   },
+  areaServed: [
+    { "@type": "State", name: "Lazio" },
+    { "@type": "State", name: "Umbria" },
+  ],
 };
 
 export default function RootLayout({

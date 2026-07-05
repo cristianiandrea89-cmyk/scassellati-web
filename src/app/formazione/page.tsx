@@ -4,9 +4,22 @@ import PageHero from "@/components/PageHero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Formazione",
+  title: "Formazione controlli numerici e utensili",
   description:
-    "Formazione tecnica pratica su macchine utensili, programmazione CNC, CAD/CAM e metrologia. Percorsi con Hexagon Machine Trainer e collaborazione ELIS.",
+    "Corsi di formazione su controlli numerici (CNC), programmazione CAM, utensileria Sandvik Coromant e Schunk e metrologia, con simulatore Hexagon Machine Trainer. Percorsi per aziende del Lazio e dell'Umbria.",
+};
+
+const trainingJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Formazione tecnica su controlli numerici e utensili",
+  description:
+    "Corsi di formazione pratica su controlli numerici CNC, programmazione CAM e utensileria Sandvik Coromant e Schunk, anche in azienda.",
+  provider: { "@type": "LocalBusiness", name: "F. Scassellati S.r.l." },
+  areaServed: [
+    { "@type": "State", name: "Lazio" },
+    { "@type": "State", name: "Umbria" },
+  ],
 };
 
 const beneficiHexagon = [
@@ -54,10 +67,14 @@ const trainingAreas = [
 export default function FormazionePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(trainingJsonLd) }}
+      />
       <PageHero
         eyebrow="Formazione"
         title="La nostra formazione nasce dall'esperienza in produzione."
-        subtitle="Progettiamo percorsi formativi su macchine utensili, CNC, CAD/CAM, metrologia e tecnologie di produzione, costruiti sulle reali esigenze delle aziende e orientati all'applicazione pratica."
+        subtitle="Progettiamo percorsi formativi su controlli numerici (CNC), utensileria, CAD/CAM, metrologia e tecnologie di produzione, costruiti sulle reali esigenze delle aziende del Lazio e dell'Umbria e orientati all'applicazione pratica."
         backHref="/servizi"
         backLabel="Torna a Servizi"
         image="/images/formazione/hero-formazione.jpeg"
