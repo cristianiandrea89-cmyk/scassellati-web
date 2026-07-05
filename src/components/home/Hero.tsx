@@ -7,14 +7,21 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative bg-dgray text-offwhite overflow-hidden">
-      <Image
-        src="/images/home/hero-header.jpeg"
-        alt=""
-        fill
-        priority
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-dgray via-dgray/75 to-transparent" />
+      <motion.div
+        className="absolute inset-0"
+        initial={{ opacity: 0, x: 60, scale: 1.05 }}
+        animate={{ opacity: 1, x: 0, scale: 1.05 }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <Image
+          src="/images/home/hero-header.jpeg"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+        />
+      </motion.div>
+      <div className="absolute inset-0 bg-dgray/30" />
       <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
