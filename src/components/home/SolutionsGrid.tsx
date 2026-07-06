@@ -4,12 +4,12 @@ const solutions = [
   {
     title: "Fresatura CNC",
     subtitle: "Verticali, orizzontali e 5 assi",
-    href: "/soluzioni/asportazione-truciolo",
+    href: "/soluzioni/asportazione-truciolo/fresatura",
   },
   {
     title: "Tornitura & fantina mobile",
     subtitle: "Torni CNC, fantina mobile, plurimandrino, caricatori",
-    href: "/soluzioni/asportazione-truciolo",
+    href: "/soluzioni/asportazione-truciolo/tornitura",
   },
   {
     title: "Macchine per lamiera",
