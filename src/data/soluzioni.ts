@@ -239,10 +239,10 @@ export const soluzioniPages: Record<string, SolutionCategory> = {
         brands: [{ name: "Frigel", url: "https://www.frigel.com/it" }],
       },
       {
-        name: "Miscelatori Shini",
+        name: "Miscelatori CMT",
         description: "Miscelazione e dosaggio dei materiali plastici prima dello stampaggio.",
         image: "/images/soluzioni/plastica-shini-miscelatore.jpg",
-        brands: [{ name: "Shini", url: "https://www.shini.it/" }],
+        brands: [{ name: "CMT", url: "https://www.shini.it/" }],
       },
       {
         name: "Nastri trasportatori Virginio",
