@@ -45,21 +45,36 @@ export default function SolutionsGrid() {
         </h2>
 
         <div className="grid gap-px bg-white/10 md:grid-cols-3">
-          {solutions.map((s) => (
-            <Link
-              key={s.title}
-              href={s.href}
-              className="group bg-dgray p-8 hover:bg-white/[0.03] transition-colors"
-            >
-              <h3 className="font-heading font-bold uppercase text-xl text-offwhite mb-2 group-hover:text-bronze transition-colors">
-                {s.title}
-              </h3>
-              <p className="text-sm text-gray/70">{s.subtitle}</p>
-              <span className="mt-4 inline-block text-bronze text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                Scopri di più →︎
-              </span>
-            </Link>
-          ))}
+          {solutions.map((s) => {
+            // Prova: su "Fresatura CNC" la CTA e' sempre visibile (non solo
+            // in hover) e la card da' un feedback al tocco, cosi' su mobile
+            // si capisce che e' cliccabile. Se funziona bene, si estende
+            // alle altre card.
+            const isTouchTest = s.title === "Fresatura CNC";
+            return (
+              <Link
+                key={s.title}
+                href={s.href}
+                className={`group bg-dgray p-8 hover:bg-white/[0.03] transition-colors ${
+                  isTouchTest ? "active:bg-white/[0.06]" : ""
+                }`}
+              >
+                <h3 className="font-heading font-bold uppercase text-xl text-offwhite mb-2 group-hover:text-bronze transition-colors">
+                  {s.title}
+                </h3>
+                <p className="text-sm text-gray/70">{s.subtitle}</p>
+                <span
+                  className={`mt-4 inline-block text-bronze text-sm transition-opacity ${
+                    isTouchTest
+                      ? "opacity-100"
+                      : "opacity-0 group-hover:opacity-100"
+                  }`}
+                >
+                  Scopri di più →︎
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
