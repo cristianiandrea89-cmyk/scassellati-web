@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { areas } from "@/data/soluzioni";
 
 const links = [
@@ -21,6 +21,18 @@ const solutionLinks = areas.map((area) => ({
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    // Ignora il micro-scroll causato dall'inserimento del menu stesso
+    // nel flusso della pagina: chiude solo su uno scroll reale dell'utente.
+    const startY = window.scrollY;
+    const handleScroll = () => {
+      if (Math.abs(window.scrollY - startY) > 8) setOpen(false);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 bg-dgray text-offwhite">
