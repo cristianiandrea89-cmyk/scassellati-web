@@ -78,9 +78,9 @@ export default function ChiSiamoPage() {
               relazioni basate su fiducia, disponibilità e risultati
               concreti.
             </p>
-            <div className="relative w-full aspect-[6/1] rounded-lg overflow-hidden">
+            <div className="relative w-full aspect-[3/1] rounded-lg overflow-hidden">
               <Image
-                src="/images/chi-siamo/team-linkedin-cover.jpg"
+                src="/images/chi-siamo/team-evento-2025.jpg"
                 alt="Il team Scassellati"
                 fill
                 className="object-cover"
