@@ -16,6 +16,26 @@ export default function Footer() {
           <p className="mt-4 text-sm leading-relaxed text-gray/80 max-w-xs">
             Dal 1962 affianchiamo l&apos;industria meccanica.
           </p>
+          <div className="mt-5 flex items-center gap-3">
+            <span className="text-sm text-gray/80">Seguici su</span>
+            <a
+              href="https://www.linkedin.com/company/106289290/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Scassellati su LinkedIn"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-gray/30 text-gray/80 hover:border-bronze hover:text-bronze transition-colors duration-200"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.94v5.666H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.56V9h3.554v11.452z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <div className="text-sm leading-relaxed">
@@ -24,10 +44,11 @@ export default function Footer() {
           </p>
           <p className="text-gray/80">F. SCASSELLATI S.r.l.</p>
           <p className="text-gray/80">Via del Casale Ferranti, 85 — 00173 Roma</p>
+          <p className="text-gray/80">P.IVA: 05309771003</p>
           <p className="mt-3 text-gray/80">Tel: +39 06 93020906</p>
           <p className="text-gray/80">Email: segreteria@scassellati.com</p>
           <p className="text-gray/80">PEC: fscassellati@pec.it</p>
-          <p className="mt-3 text-gray/55">Lun–Ven: 9:00–17:00</p>
+          <p className="mt-3 text-gray/55">Lun–Ven: 9:00–13:00, 14:00–17:00</p>
         </div>
 
         <div className="text-sm leading-relaxed">

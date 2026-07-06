@@ -72,7 +72,7 @@ export default function ContattiPage() {
             <p className="text-dgray/70">Email: segreteria@scassellati.com</p>
             <p className="text-dgray/70 mb-4">PEC: fscassellati@pec.it</p>
             <p className="text-dgray/50 text-sm mb-8">
-              Lun–Ven: 9:00–17:00
+              Lun–Ven: 9:00–13:00, 14:00–17:00
             </p>
             <div className="rounded-lg overflow-hidden aspect-video border border-gray/60">
               <iframe
