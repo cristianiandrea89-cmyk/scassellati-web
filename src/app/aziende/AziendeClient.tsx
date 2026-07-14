@@ -111,7 +111,7 @@ export default function AziendeClient() {
             ))}
           </div>
 
-          <p className="text-sm text-dgray/50 mb-6">
+          <p className="text-sm text-dgray/65 mb-6">
             {filtered.length} {filtered.length === 1 ? "azienda" : "aziende"}
           </p>
 
@@ -129,6 +129,7 @@ export default function AziendeClient() {
                     href={brand.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Visita il sito ufficiale di ${brand.name}`}
                     className="inline-flex items-center gap-1 text-sm text-dgray hover:text-bronze hover:underline transition-colors"
                   >
                     Visita il sito ufficiale →︎

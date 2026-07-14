@@ -65,7 +65,7 @@ function PartnerItem({ partner }: { partner: (typeof partners)[number] }) {
     );
   }
   return (
-    <span className="shrink-0 font-heading font-bold uppercase text-xl text-dgray/40 transition-colors hover:text-dgray">
+    <span className="shrink-0 font-heading font-bold uppercase text-xl text-dgray/65 transition-colors hover:text-dgray">
       {partner.name}
     </span>
   );
@@ -75,7 +75,7 @@ export default function PartnerLogos() {
   return (
     <section className="bg-offwhite border-y border-gray/60 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 py-14">
-        <p className="text-center text-sm uppercase tracking-[0.2em] text-dgray/60 mb-8">
+        <p className="text-center text-sm uppercase tracking-[0.2em] text-dgray/65 mb-8">
           I nostri partner tecnologici
         </p>
         <div className="animate-marquee flex w-max items-center gap-x-16">

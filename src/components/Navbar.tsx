@@ -56,7 +56,7 @@ export default function Navbar() {
             >
               Soluzioni
             </Link>
-            <div className="invisible absolute left-1/2 top-full w-80 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+            <div className="invisible absolute left-1/2 top-full w-80 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
               <div className="rounded-lg border border-white/10 bg-dgray p-3 shadow-lg">
                 {solutionLinks.map((link) => (
                   <Link

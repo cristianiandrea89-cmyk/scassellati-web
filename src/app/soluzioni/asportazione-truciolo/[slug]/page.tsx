@@ -60,7 +60,7 @@ export default async function AsportazioneDetailPage({
                 <p className="text-dgray font-medium">{item.name}</p>
                 <p className="mt-1 text-sm text-dgray/70">{item.description}</p>
                 {item.brands && item.brands.length > 0 && (
-                  <p className="mt-3 text-xs text-dgray/50">
+                  <p className="mt-3 text-xs text-dgray/65">
                     {item.brands.length === 1 ? "Partner tecnologico: " : "Partner tecnologici: "}
                     {item.brands.map((brand, i) => (
                       <span key={brand.url}>
@@ -83,7 +83,7 @@ export default async function AsportazioneDetailPage({
         </div>
         {data.items.length === 0 && (
           <div className="mx-auto max-w-7xl px-6 pb-16">
-            <p className="text-sm text-dgray/50">
+            <p className="text-sm text-dgray/65">
               Schede tecniche e foto di dettaglio in arrivo per questa sezione.
             </p>
           </div>

@@ -76,7 +76,7 @@ export default async function SoluzioneDetailPage({
                 <p className="text-dgray font-medium">{item.name}</p>
                 <p className="mt-1 text-sm text-dgray/70">{item.description}</p>
                 {item.brands && item.brands.length > 0 && (
-                  <p className="mt-3 text-xs text-dgray/50">
+                  <p className="mt-3 text-xs text-dgray/65">
                     {item.brands.length === 1 ? "Partner tecnologico: " : "Partner tecnologici: "}
                     {item.brands.map((brand, i) => (
                       <span key={brand.url}>

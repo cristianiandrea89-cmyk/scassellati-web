@@ -27,7 +27,7 @@ export default function ValueBlock() {
         <div className="bg-dgray rounded-lg aspect-[4/3] flex items-center justify-center">
           <Image
             src="/logo/scassellati-symbol-gold.svg"
-            alt=""
+            alt="Simbolo Scassellati"
             width={81}
             height={55}
             className="w-24 h-auto opacity-90"

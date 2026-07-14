@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import CookiePreferencesButton from "./CookiePreferencesButton";
 
 export default function Footer() {
   return (
@@ -48,7 +49,7 @@ export default function Footer() {
           <p className="mt-3 text-gray/80">Tel: +39 06 93020906</p>
           <p className="text-gray/80">Email: segreteria@scassellati.com</p>
           <p className="text-gray/80">PEC: fscassellati@pec.it</p>
-          <p className="mt-3 text-gray/55">Lun–Ven: 9:00–13:00, 14:00–17:00</p>
+          <p className="mt-3 text-gray/65">Lun–Ven: 9:00–13:00, 14:00–17:00</p>
         </div>
 
         <div className="text-sm leading-relaxed">
@@ -85,9 +86,20 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/8">
-        <div className="mx-auto max-w-7xl px-6 py-6 text-center text-xs text-gray/50">
-          © {new Date().getFullYear()} F. Scassellati S.r.l. — Tutti i diritti
-          riservati
+        <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row items-center justify-center md:justify-between gap-3 text-center text-xs text-gray/65">
+          <p>
+            © {new Date().getFullYear()} F. Scassellati S.r.l. — Tutti i
+            diritti riservati
+          </p>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/privacy"
+              className="hover:text-bronze underline transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <CookiePreferencesButton />
+          </div>
         </div>
       </div>
     </footer>

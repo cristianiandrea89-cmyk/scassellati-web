@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import ContactForm from "@/components/forms/ContactForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,47 +21,7 @@ export default function ContattiPage() {
 
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-20 grid gap-16 md:grid-cols-2">
-          <form className="space-y-4">
-            <input
-              type="text"
-              placeholder="Nome e cognome"
-              className="w-full border border-gray/60 rounded-sm px-4 py-3 text-sm"
-            />
-            <input
-              type="text"
-              placeholder="Azienda"
-              className="w-full border border-gray/60 rounded-sm px-4 py-3 text-sm"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full border border-gray/60 rounded-sm px-4 py-3 text-sm"
-            />
-            <input
-              type="tel"
-              placeholder="Telefono"
-              className="w-full border border-gray/60 rounded-sm px-4 py-3 text-sm"
-            />
-            <textarea
-              placeholder="Messaggio"
-              rows={5}
-              className="w-full border border-gray/60 rounded-sm px-4 py-3 text-sm"
-            />
-            <div className="flex gap-4">
-              <button
-                type="submit"
-                className="bg-dgray text-offwhite px-6 py-3 rounded-sm hover:bg-dgray/90 transition-colors"
-              >
-                Invia richiesta
-              </button>
-              <button
-                type="reset"
-                className="border border-gray/60 text-dgray px-6 py-3 rounded-sm hover:border-bronze hover:text-bronze transition-colors"
-              >
-                Azzera campi
-              </button>
-            </div>
-          </form>
+          <ContactForm />
 
           <div>
             <h3 className="font-heading font-bold uppercase text-lg text-dgray mb-4">
@@ -71,7 +32,7 @@ export default function ContattiPage() {
             <p className="text-dgray/70">Tel: +39 06 93020906</p>
             <p className="text-dgray/70">Email: segreteria@scassellati.com</p>
             <p className="text-dgray/70 mb-4">PEC: fscassellati@pec.it</p>
-            <p className="text-dgray/50 text-sm mb-8">
+            <p className="text-dgray/65 text-sm mb-8">
               Lun–Ven: 9:00–13:00, 14:00–17:00
             </p>
             <div className="rounded-lg overflow-hidden aspect-video border border-gray/60">
