@@ -4,8 +4,10 @@ import { useState, type FormEvent } from "react";
 import Link from "next/link";
 
 type Errors = Partial<
-  Record<"nome" | "email" | "messaggio" | "privacy", string>
+  Record<"nome" | "email" | "telefono" | "messaggio" | "privacy", string>
 >;
+
+const PHONE_REGEX = /^[+]?[\d\s()-]{7,20}$/;
 
 const inputClass = (hasError: boolean) =>
   `w-full border rounded-sm px-4 py-3 text-sm ${
@@ -14,11 +16,18 @@ const inputClass = (hasError: boolean) =>
 
 export default function ContactForm() {
   const [errors, setErrors] = useState<Errors>({});
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
+    "idle"
+  );
+  const [serverError, setServerError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     const form = e.currentTarget;
     const nome = (form.elements.namedItem("nome") as HTMLInputElement).value.trim();
+    const azienda = (form.elements.namedItem("azienda") as HTMLInputElement).value.trim();
     const email = (form.elements.namedItem("email") as HTMLInputElement).value.trim();
+    const telefono = (form.elements.namedItem("telefono") as HTMLInputElement).value.trim();
     const messaggio = (
       form.elements.namedItem("messaggio") as HTMLTextAreaElement
     ).value.trim();
@@ -31,6 +40,9 @@ export default function ContactForm() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       nextErrors.email = "L'indirizzo email non è valido.";
     }
+    if (telefono && !PHONE_REGEX.test(telefono)) {
+      nextErrors.telefono = "Il numero di telefono non è valido.";
+    }
     if (!messaggio) nextErrors.messaggio = "Scrivi il messaggio da inviarci.";
     if (!privacy)
       nextErrors.privacy = "Devi accettare la Privacy Policy per continuare.";
@@ -38,12 +50,52 @@ export default function ContactForm() {
     setErrors(nextErrors);
 
     if (Object.keys(nextErrors).length > 0) {
-      e.preventDefault();
       const firstErrorField = form.elements.namedItem(
         Object.keys(nextErrors)[0]
       ) as HTMLElement | null;
       firstErrorField?.focus();
+      return;
     }
+
+    setStatus("submitting");
+    setServerError(null);
+
+    try {
+      const res = await fetch("/api/contatti", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nome, azienda, email, telefono, messaggio, privacy }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setServerError(data.error ?? "Impossibile inviare il messaggio. Riprova più tardi.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setServerError("Impossibile inviare il messaggio. Controlla la connessione e riprova.");
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div
+        role="status"
+        className="border border-gray/60 rounded-lg bg-offwhite p-8"
+      >
+        <h3 className="font-heading font-bold uppercase text-lg text-dgray mb-2">
+          Messaggio inviato correttamente
+        </h3>
+        <p className="text-dgray/70">
+          Grazie per averci contattato. Ti risponderemo il prima possibile.
+        </p>
+      </div>
+    );
   }
 
   return (
@@ -112,8 +164,15 @@ export default function ContactForm() {
           name="telefono"
           type="tel"
           placeholder="Telefono"
-          className={inputClass(false)}
+          aria-invalid={!!errors.telefono}
+          aria-describedby={errors.telefono ? "telefono-error" : undefined}
+          className={inputClass(!!errors.telefono)}
         />
+        {errors.telefono && (
+          <p id="telefono-error" role="alert" className="mt-1 text-sm text-red-600">
+            {errors.telefono}
+          </p>
+        )}
       </div>
 
       <div>
@@ -167,16 +226,27 @@ export default function ContactForm() {
         )}
       </div>
 
+      {status === "error" && serverError && (
+        <p role="alert" className="text-sm text-red-600">
+          {serverError}
+        </p>
+      )}
+
       <div className="flex gap-4">
         <button
           type="submit"
-          className="bg-dgray text-offwhite px-6 py-3 rounded-sm hover:bg-dgray/90 transition-colors"
+          disabled={status === "submitting"}
+          className="bg-dgray text-offwhite px-6 py-3 rounded-sm hover:bg-dgray/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          Invia richiesta
+          {status === "submitting" ? "Invio in corso…" : "Invia richiesta"}
         </button>
         <button
           type="reset"
-          onClick={() => setErrors({})}
+          onClick={() => {
+            setErrors({});
+            setServerError(null);
+            setStatus("idle");
+          }}
           className="border border-gray/60 text-dgray px-6 py-3 rounded-sm hover:border-bronze hover:text-bronze transition-colors"
         >
           Azzera campi

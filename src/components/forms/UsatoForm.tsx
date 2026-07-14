@@ -12,8 +12,13 @@ const inputClass = (hasError: boolean) =>
 
 export default function UsatoForm() {
   const [errors, setErrors] = useState<Errors>({});
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
+    "idle"
+  );
+  const [serverError, setServerError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     const form = e.currentTarget;
     const marca = (form.elements.namedItem("marca") as HTMLInputElement).value.trim();
     const modello = (
@@ -30,12 +35,55 @@ export default function UsatoForm() {
     setErrors(nextErrors);
 
     if (Object.keys(nextErrors).length > 0) {
-      e.preventDefault();
       const firstErrorField = form.elements.namedItem(
         Object.keys(nextErrors)[0]
       ) as HTMLElement | null;
       firstErrorField?.focus();
+      return;
     }
+
+    setStatus("submitting");
+    setServerError(null);
+
+    try {
+      const formData = new FormData(form);
+      formData.set("privacy", privacy ? "true" : "false");
+
+      const res = await fetch("/api/usato", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setServerError(data.error ?? "Impossibile inviare la richiesta. Riprova più tardi.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setServerError("Impossibile inviare la richiesta. Controlla la connessione e riprova.");
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div
+        role="status"
+        className="border border-gray/60 rounded-lg bg-offwhite p-8"
+      >
+        <h3 className="font-heading font-bold uppercase text-lg text-dgray mb-2">
+          Richiesta inviata correttamente
+        </h3>
+        <p className="text-dgray/70">
+          Grazie, abbiamo ricevuto i dati della tua macchina. Ti
+          ricontatteremo per la valutazione il prima possibile.
+        </p>
+      </div>
+    );
   }
 
   return (
@@ -110,9 +158,10 @@ export default function UsatoForm() {
 
       <label className="block">
         <span className="block text-sm text-dgray/70 mb-2">
-          Foto della macchina (opzionale)
+          Foto della macchina (opzionale, max 5 file, 8MB ciascuno)
         </span>
         <input
+          name="foto"
           type="file"
           accept="image/*"
           multiple
@@ -150,11 +199,18 @@ export default function UsatoForm() {
         )}
       </div>
 
+      {status === "error" && serverError && (
+        <p role="alert" className="text-sm text-red-600">
+          {serverError}
+        </p>
+      )}
+
       <button
         type="submit"
-        className="bg-dgray text-offwhite px-6 py-3 rounded-sm hover:bg-dgray/90 transition-colors"
+        disabled={status === "submitting"}
+        className="bg-dgray text-offwhite px-6 py-3 rounded-sm hover:bg-dgray/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Invia il modulo
+        {status === "submitting" ? "Invio in corso…" : "Invia il modulo"}
       </button>
     </form>
   );
