@@ -10,7 +10,7 @@ export default function Footer() {
           <Image
             src="/logo/scassellati-lockup-white.svg"
             alt="Scassellati"
-            width={189}
+            width={173}
             height={20}
             className="h-6 w-auto"
           />
@@ -46,6 +46,7 @@ export default function Footer() {
           <p className="text-gray/80">F. SCASSELLATI S.r.l.</p>
           <p className="text-gray/80">Via del Casale Ferranti, 85 — 00173 Roma</p>
           <p className="text-gray/80">P.IVA: 05309771003</p>
+          <p className="text-gray/80">REA: RM875293</p>
           <p className="mt-3 text-gray/80">Tel: +39 06 93020906</p>
           <p className="text-gray/80">Email: segreteria@scassellati.com</p>
           <p className="text-gray/80">PEC: fscassellati@pec.it</p>

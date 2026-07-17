@@ -36,7 +36,7 @@ export default function UsatoPage() {
         backLabel="Torna alla Home"
       />
 
-      <section className="bg-white">
+      <section className="bg-offwhite">
         <div className="mx-auto max-w-7xl px-6 py-20 grid gap-16 md:grid-cols-2">
           <div>
             <h2 className="font-heading font-extrabold uppercase text-2xl text-dgray mb-4">
@@ -55,21 +55,22 @@ export default function UsatoPage() {
               Macchine disponibili in pronta consegna
             </h2>
             <p className="text-dgray/70 mb-8">
-              Gli annunci saranno collegati automaticamente al nostro
-              portale dedicato all&apos;usato,{" "}
+              Le macchine usate disponibili sono pubblicate sul nostro
+              portale dedicato,{" "}
               <a
                 href="https://ventunoservice.it/"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="text-dgray hover:text-bronze hover:underline transition-colors"
               >
                 ventunoservice.it
-              </a>{" "}
-              — questa sezione mostrerà a breve le macchine disponibili.
+              </a>
+              .
             </p>
-            <div className="bg-offwhite border border-dashed border-gray/60 rounded-lg p-10 text-center text-dgray/65 text-sm">
-              Elenco macchine usate in arrivo
-            </div>
+            <a
+              href="https://ventunoservice.it/"
+              className="inline-block bg-dgray text-offwhite px-6 py-3 rounded-sm hover:bg-dgray/90 transition-colors"
+            >
+              Vai a ventunoservice.it →︎
+            </a>
           </div>
         </div>
       </section>

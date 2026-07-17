@@ -37,14 +37,22 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-dgray text-offwhite">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="block">
+        <Link href="/" aria-label="Torna alla home" className="group relative block h-6">
           <Image
             src="/logo/scassellati-lockup-white.svg"
             alt="Scassellati"
-            width={189}
+            width={173}
             height={20}
-            className="h-6 w-auto"
+            className="h-6 w-auto transition-opacity duration-200 group-hover:opacity-0"
             priority
+          />
+          <Image
+            src="/logo/scassellati-lockup-bronze.svg"
+            alt=""
+            aria-hidden="true"
+            width={173}
+            height={20}
+            className="absolute inset-0 h-6 w-auto opacity-0 transition-opacity duration-200 group-hover:opacity-100"
           />
         </Link>
 
