@@ -230,7 +230,7 @@ export const soluzioniPages: Record<string, SolutionCategory> = {
         name: "Presse Engel",
         description: "Stampaggio a iniezione per componenti in materiale plastico.",
         image: "/images/soluzioni/plastica-engel-victory160.jpg",
-        brands: [{ name: "Engel", url: "https://www.engelglobal.com/it/it/index.html" }],
+        brands: [{ name: "Engel", url: "https://www.engelglobal.com/it/it/" }],
       },
       {
         name: "Refrigerazione Frigel",
@@ -261,7 +261,7 @@ export const soluzioniPages: Record<string, SolutionCategory> = {
         name: "Lavaggio metalli",
         description: "Lavaggio industriale dei componenti dopo la lavorazione meccanica.",
         image: "/images/soluzioni/finitura-lavaggio-firbimatic.jpg",
-        brands: [{ name: "Firbimatic", url: "https://www.firbimatic.it/home" }],
+        brands: [{ name: "Firbimatic", url: "https://www.firbimatic.it/" }],
       },
       {
         name: "Lucidatura",
